@@ -11,7 +11,8 @@ def load_model():
     model_type = ModelType.qwen_7b_chat
 
     template_type = get_default_template_type(model_type)
-    model, tokenizer = get_model_tokenizer(model_type, model_kwargs={'device_map': 'auto'}, model_id_or_path=ckpt_dir)
+    model, tokenizer = get_model_tokenizer(model_type, model_kwargs={'device_map': 'auto'})
+    model = Swift.from_pretrained(model, ckpt_dir, inference_mode=True)
     template = get_template(template_type, tokenizer)
     
     return model, tokenizer, template
