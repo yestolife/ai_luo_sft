@@ -2,7 +2,7 @@ import gradio as gr
 from modelscope import AutoModelForCausalLM, AutoTokenizer
 import os
 from swift.llm import get_model_tokenizer, get_template, inference, ModelType, get_default_template_type
-# from swift.tuners import Swift
+from swift.tuners import Swift
 from modelscope import snapshot_download
 
 
@@ -30,7 +30,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 webui = gr.Interface(
     ai_luo, 
     inputs=[gr.Textbox(label="提出问你的问题", lines=5)],
-    outputs=[gr.Textbox(label="模拟罗胖口吻", lines=5)],
+    outputs=[gr.Textbox(label="模拟罗胖口吻回答", lines=5)],
     title="AI罗胖",
     allow_flagging='never') 
 
