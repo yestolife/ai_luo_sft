@@ -29,7 +29,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
 webui = gr.Interface(
     ai_luo, 
-    inputs=[gr.Textbox(label="提出问你的问题", lines=5)],
+    inputs=[gr.Textbox(label="提出你的问题", lines=5)],
     outputs=[gr.Textbox(label="模拟罗胖口吻回答", lines=5)],
     title="AI罗胖",
     allow_flagging='never') 
